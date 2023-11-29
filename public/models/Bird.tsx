@@ -1,19 +1,21 @@
 import { useEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { useAnimations, useGLTF } from "@react-three/drei";
+import { Mesh } from 'three'
 
 export function Bird() {
-  const birdRef = useRef();
+  const birdRef = useRef<Mesh>(null!)
 
   const { scene, animations } = useGLTF('../assets/3d/bird.glb');
 
   const { actions } = useAnimations(animations, birdRef);
 
   useEffect(() => {
-    actions["Take 001"].play();
+    actions!["Take 001"]!.play();
   }, []);
 
   useFrame(({ clock, camera }) => {
+
     birdRef.current.position.y = Math.sin(clock.elapsedTime) * 0.2 + 2;
 
     if (birdRef.current.position.x > camera.position.x + 10) {
@@ -26,7 +28,8 @@ export function Bird() {
     if (birdRef.current.rotation.y === 0) {
       birdRef.current.position.x += 0.01;
       birdRef.current.position.z -= 0.01;
-    } else {
+    } 
+    else {
       birdRef.current.position.x -= 0.01;
       birdRef.current.position.z += 0.01;
     }

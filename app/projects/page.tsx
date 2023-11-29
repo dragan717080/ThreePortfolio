@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { projects } from "@/app/constants";
 import Link from 'next/link';
+import Image from 'next/image';
 import { arrow } from "@/public/assets/icons";
 
 const Projects: FC = () => {
@@ -14,7 +15,7 @@ const Projects: FC = () => {
       </h1>
       <p className='text-slate-500 mt-2 leading-relaxed'>
         I think that the best way to learn technologies is to dive in and make apps
-        in them! Here are some of the projects I've made since I've started
+        in them! Here are some of the projects I&apos;ve made since I&apos;ve started
         coding three years ago:
       </p>
       <div className='flex flex-wrap my-20 gap-16'>
@@ -23,10 +24,13 @@ const Projects: FC = () => {
             <div className='block-container w-12 h-12'>
               <div className={`btn-back rounded-xl ${project.theme}`} />
               <div className='btn-front rounded-xl row'>
-                <img
+                <Image
+                  height={48}
+                  width={48}
                   src={project.iconUrl}
                   alt='threads'
-                  className='w-1/2 h-1/2 object-contain'
+                  className='w-auto object-contain'
+                  sizes='100vw'
                 />
               </div>
             </div>
@@ -44,10 +48,13 @@ const Projects: FC = () => {
                 >
                   Link to project
                 </Link>
-                <img
+                <Image
+                  height={16}
+                  width={16}
                   src={arrow}
                   alt='arrow'
-                  className='w-4 h-4 object-contain'
+                  className='w-auto object-contain'
+                  sizes='100vw'
                 />
               </div>
             </div>

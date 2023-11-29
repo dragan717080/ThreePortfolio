@@ -15,11 +15,11 @@ const Navbar: FC = () => {
         onClick={() => router.push('/')}
         className="row"
       >
-        <div className='relative row-v h-10 w-10 pointer'>
+        <div className='relative row-v pointer'>
           <Image
-            fill
+            height={40}
+            width={40}
             src='/assets/images/logo.webp'
-            objectFit='contain'
             objectPosition='left'
             alt='logo'
             sizes='100vw'

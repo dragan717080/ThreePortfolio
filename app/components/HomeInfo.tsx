@@ -1,10 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 
-const HomeInfo = ({ currentStage }) => {
+const HomeInfo = ({ currentStage } : { currentStage: number }) => {
   if (currentStage === 1) {
     return (
       <h1 className='sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5'>
-        Hi, I'm
+        Hi, I&apos;m
         <span className='font-semibold mx-2 text-white'>Dragan</span>
         👋
         <br />
@@ -17,7 +18,7 @@ const HomeInfo = ({ currentStage }) => {
     return (
       <div className='sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5'>
         <p className='font-medium sm:text-xl text-center'>
-          I'm a self taught developer <br /> with passion for learning new technologies.
+          I&apos;m a self taught developer <br /> with passion for learning new technologies.
         </p>
       </div>
     );
@@ -45,7 +46,7 @@ const HomeInfo = ({ currentStage }) => {
       </p>
       <Link href='/contact' className='neo-brutalism-white neo-btn'>
         About me
-        <img src='/assets/icons/arrow.svg' className='w-4 h-4 object-contain' />
+        <Image height={16} width={16} src='/assets/icons/arrow.svg' className='object-contain' sizes='100vw' alt='learn-more-arrow-right' />
       </Link>
     </div>
     );

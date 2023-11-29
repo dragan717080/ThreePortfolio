@@ -1,11 +1,9 @@
 import React, { useRef, useEffect } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
 
-import scene from "../assets/3d/fox.glb";
-
 export function Fox({ currentAnimation, ...props }) {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF(scene);
+  const { nodes, materials, animations } = useGLTF("../assets/3d/fox.glb");
   const { actions } = useAnimations(animations, group);
 
   useEffect(() => {

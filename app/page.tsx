@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef, Suspense, lazy } from 'react';
 import Image from 'next/image';
 import { Canvas } from "@react-three/fiber";
-import sakura from "@/public/assets/sakura.mp3";
 import { soundoff, soundon } from "@/public/assets/icons";
 import { HomeInfo, Loader } from './components';
 
@@ -13,7 +12,7 @@ export default function Home() {
   const [isRotating, setIsRotating] = useState(false);
   const [isPlayingMusic, setIsPlayingMusic] = useState(false);
 
-  const audioRef = useRef(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const Bird = lazy(() => import('@/public/models/Bird').then(module => ({ default: module.Bird })));
   const Island = lazy(() => import('@/public/models/Island').then(module => ({ default: module.Island })));
@@ -22,6 +21,9 @@ export default function Home() {
 
   const adjustBiplaneForScreenSize = () => {
     let screenScale, screenPosition;
+    if (typeof (window) === 'undefined') {
+      return [null, null];
+    }
 
     if (window.innerWidth < 768) {
       screenScale = [1.5, 1.5, 1.5];
@@ -36,6 +38,9 @@ export default function Home() {
 
   const adjustIslandForScreenSize = () => {
     let screenScale, screenPosition;
+    if (typeof (window) === 'undefined') {
+      return [null, null];
+    }
 
     if (window.innerWidth < 768) {
       screenScale = [0.9, 0.9, 0.9];
@@ -53,7 +58,9 @@ export default function Home() {
 
   useEffect(() => {
     if (isPlayingMusic) {
-      audioRef.current.play();
+      audioRef.current!.volume = 0.4;
+      audioRef.current!.loop = true;
+      audioRef.current!.play();
     }
 
     return () => {
@@ -63,52 +70,57 @@ export default function Home() {
 
   return (
     <section className="relative h-screen">
-      <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
+      <div className='absolute top-28 left-0 right-0 z-10 row'>
         {currentStage && <HomeInfo currentStage={currentStage} />}
       </div>
-      <audio volume={0.4} loop={true} src='/assets/sakura.mp3' ref={audioRef} />
+      <audio src='/assets/sakura.mp3' ref={audioRef} />
       <Canvas
         className={`w-full h-screen bg-transparent ${isRotating ? "cursor-grabbing" : "cursor-grab"
           }`}
         camera={{ near: 0.1, far: 1000 }}
       >
-          <directionalLight position={[1, 1, 1]} intensity={2} />
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 5, 10]} intensity={2} />
-          <spotLight
-            position={[0, 50, 10]}
-            angle={0.15}
-            penumbra={1}
-            intensity={2}
-          />
-          <hemisphereLight
-            skyColor='#b1e1ff'
-            groundColor='#000000'
-            intensity={1}
-          />
-          <Bird />
-          <Sky isRotating={isRotating} />
-          <Island
-            isRotating={isRotating}
-            setIsRotating={setIsRotating}
-            setCurrentStage={setCurrentStage}
-            position={islandPosition}
-            rotation={[0.1, 4.7077, 0]}
-            scale={islandScale}
-          />
-          <Plane
-            isRotating={isRotating}
-            position={biplanePosition}
-            rotation={[0, 20.1, 0]}
-            scale={biplaneScale}
-          />
+        <Suspense fallback={<Loader />}>
+        <directionalLight position={[1, 1, 1]} intensity={2} />
+        <ambientLight intensity={0.5} />
+        <pointLight position={[10, 5, 10]} intensity={2} />
+        <spotLight
+          position={[0, 50, 10]}
+          angle={0.15}
+          penumbra={1}
+          intensity={2}
+        />
+        <hemisphereLight
+          color='#b1e1ff'
+          groundColor='#000000'
+          intensity={1}
+        />
+        <Bird />
+        <Sky isRotating={isRotating} />
+        <Island
+          isRotating={isRotating}
+          setIsRotating={setIsRotating}
+          setCurrentStage={setCurrentStage}
+          position={islandPosition}
+          rotation={[0.1, 4.7077, 0]}
+          scale={islandScale}
+          currentFocusPoint={{ x: 0, y: 0, z: 0 }}
+        />
+        <Plane
+          isRotating={isRotating}
+          position={biplanePosition}
+          rotation={[0, 20.1, 0]}
+          scale={biplaneScale}
+        />
+        </Suspense>
       </Canvas>
       <div className='absolute bottom-2 left-2'>
-        <img
+        <Image
+          height={40}
+          width={40}
           src={!isPlayingMusic ? soundoff.src : soundon.src}
           alt='jukebox'
           onClick={() => setIsPlayingMusic(!isPlayingMusic)}
-          className='w-10 h-10 cursor-pointer object-contain'
+          className='w-10 h-10 pointer object-contain'
         />
       </div>
     </section>
