@@ -4,7 +4,8 @@ import { useState, useEffect, useRef, Suspense, lazy } from 'react';
 import Image from 'next/image';
 import { Canvas } from "@react-three/fiber";
 import { soundoff, soundon } from "@/public/assets/icons";
-import { HomeInfo, Loader } from './components';
+import { HomeInfo, Loader, AvatarPointerCanvas } from './components';
+import { Preload } from '@react-three/drei';
 
 export default function Home() {
 
@@ -112,6 +113,7 @@ export default function Home() {
           scale={biplaneScale}
         />
         </Suspense>
+        <Preload all />
       </Canvas>
       <div className='absolute bottom-2 left-2'>
         <Image

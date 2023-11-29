@@ -7,6 +7,7 @@ import {
 import { experiences, skills } from "@/app/constants";
 
 import "react-vertical-timeline-component/style.min.css";
+import { AvatarPointerCanvas } from "../components";
 
 const About = () => {
   return (
@@ -123,10 +124,13 @@ const About = () => {
       </div>
       <div className='pb-10'>
         <h3 className='subhead-text'>Achievements</h3>
-        <div className='mt-5 flex flex-col gap-3 text-slate-500'>
+        <div className='mt-5 flex text-slate-500 max-w-20'>
           <p>
-            My biggest coding achievement so far: rank 1 on HackerRank in Python (August 2023)
+            Global rank 1 on HackerRank in Python
           </p>
+          <div className="hidden md:block -my-[2rem]">
+            <AvatarPointerCanvas />
+          </div>
         </div>
       </div>
       <hr className='border-slate-200' />

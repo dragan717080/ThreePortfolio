@@ -175,30 +175,12 @@ export const experiences = [
   },
 ];
 
-export const socialLinks = [
-  {
-    name: 'Contact',
-    iconUrl: contact,
-    link: '/contact',
-  },
-  {
-    name: 'GitHub',
-    iconUrl: github,
-    link: 'https://github.com/YourGitHubUsername',
-  },
-  {
-    name: 'LinkedIn',
-    iconUrl: linkedin,
-    link: 'https://www.linkedin.com/in/YourLinkedInUsername',
-  }
-];
-
 export const projects = [
   {
     iconUrl: nike,
     theme: 'btn-back-red',
     name: 'Next Sanity Nike',
-    description: 'Sports wear app built with Next.js, TypeScript, Tailwind, MongoDB, NextAuth.js, Prisma, Zustand and Sanity.',
+    description: 'Sports wear app built with Next.js, TypeScript, Tailwind, MongoDB, NextAuth, Prisma, Zustand and Sanity.',
     link: 'https://github.com/dragan717080/NextTypeScriptTailwindPrismaNextAuthSanityNike',
   },
   {
@@ -220,7 +202,7 @@ export const projects = [
     theme: 'btn-back-pink',
     name: 'Groceries App',
     description: 'Groceries app built in Next.js, TypeScript, Tailwind and NextAuth.',
-    link: 'https://github.com/adrianhajdin/social_media_app',
+    link: 'https://github.com/dragan717080/Groceries',
   },
   {
     iconUrl: estate,

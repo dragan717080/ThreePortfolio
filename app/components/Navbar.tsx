@@ -1,13 +1,20 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 
 const Navbar: FC = () => {
 
   const router = useRouter();
+  const [activePath, setActivePath] = useState('');
+  const pathname = usePathname();
+  const isActive = (path: string) => activePath === path;
+
+  useEffect(() => {
+    setActivePath(pathname);
+  }, [pathname]);
 
   return (
     <header className='header'>
@@ -32,10 +39,10 @@ const Navbar: FC = () => {
         </Link>
       </div>
       <nav className='flex text-lg gap-7 font-medium'>
-        <Link href='/about' className={"text-black"}>
+        <Link href='/about' className={isActive('/about') ? 'text-primary' : 'text-black'}>
           About
         </Link>
-        <Link href='/projects' className={"text-black"}>
+        <Link href='/projects' className={isActive('/projects') ? 'text-primary' : 'text-black'}>
           Projects
         </Link>
       </nav>
