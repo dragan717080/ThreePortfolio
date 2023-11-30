@@ -10,7 +10,7 @@ Next.js is a React framework for building modern web applications. It provides s
 
 - **Three.js**
 
-Three.js is a JavaScript library for creating 3D graphics in the browser. It provides a higher-level abstraction for building interactive 3D experiences. With a wide range of features and a vibrant community, Three.js is a versatile tool for developers, enabling the creation of visually stunning and immersive web applications. It offers a variety of controls, geometries, materials, and lights, adding a 3D layer of interactivity and visual appeal.
+Three.js is a JavaScript library for creating 3D graphics in the browser. It provides a higher-level abstraction for building interactive 3D experiences. It offers a variety of controls, geometries, materials, and lights, adding a 3D layer of interactivity and visual appeal.
 
 - **TypeScript**
 
