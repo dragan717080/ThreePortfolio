@@ -22,4 +22,4 @@ Tailwind CSS is a utility-first CSS framework that enables rapid UI development.
 
 ## App hosted on Vercel
 
-https://nike-three-black.vercel.app/
+https://three-portfolio-seven.vercel.app/
