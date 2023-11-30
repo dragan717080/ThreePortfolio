@@ -33,7 +33,6 @@ export function Island({ isRotating, setIsRotating, setCurrentStage, currentFocu
   };
 
   const handlePointerMove = (event: PointerEvent) => {
-    console.log(event);
     event.stopPropagation();
     event.preventDefault();
     if (isRotating) {
