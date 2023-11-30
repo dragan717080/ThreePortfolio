@@ -1,8 +1,8 @@
-# <a name="no-link"></a> Portfolio Website
+# <a name="no-link"></a>Portfolio Website
 
 Portfolio website built with Next.js, Three.js, TypeScript, and Tailwind.
 
-## <a name="no-link"></a> Technologies Used
+## <a name="no-link"></a>Technologies Used
 
 - **Next.js**
 
