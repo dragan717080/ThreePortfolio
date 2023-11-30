@@ -20,7 +20,6 @@ import bookSvg from './book.svg'
 import estateSvg from './estate.svg'
 import pricewiseSvg from './pricewise.svg'
 import snapgramSvg from './snapgram.svg'
-import summizSvg from './summiz.svg'
 import threadsSvg from './threads.svg'
 import arrowSvg from './arrow.svg'
 import contactSvg from './contact.svg'
@@ -67,7 +66,6 @@ const book = bookSvg.src;
 const estate = estateSvg.src;
 const pricewise = pricewiseSvg.src;
 const snapgram = snapgramSvg.src;
-const summiz = summizSvg.src;
 const threads = threadsSvg.src;
 const arrow = arrowSvg.src;
 const contact = contactSvg.src;
@@ -115,7 +113,6 @@ export {
   postgres,
   pricewise,
   snapgram,
-  summiz,
   threads,
   arrow,
   contact,
