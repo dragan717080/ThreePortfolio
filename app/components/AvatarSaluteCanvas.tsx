@@ -10,7 +10,7 @@ const Avatar: FC = () => {
 
   const { actions, names } = useAnimations(avatar.animations, avatar.scene);
   useEffect(() => {
-    actions['salute'].fadeIn(0.5).play();
+    actions!['salute']!.fadeIn(0.5).play();
   }, []);
 
   return (

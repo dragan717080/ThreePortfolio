@@ -2,43 +2,42 @@ import { a } from "@react-spring/three";
 import { useEffect, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
+import { Group } from 'three';
+import { Position, PositionInterface, GLTFRes } from "@/app/interfaces";
+import { MeshInterface } from "@/app/interfaces";
 
-export function Island({
-  isRotating,
-  setIsRotating,
-  setCurrentStage,
-  currentFocusPoint,
-  ...props
-}) {
-  const islandRef = useRef();
+export function Island({ isRotating, setIsRotating, setCurrentStage, currentFocusPoint, 
+  position, rotation, scale }: MeshInterface) {
+  const islandRef = useRef<Group>(null!);
   const { gl, viewport } = useThree();
-  const { nodes, materials } = useGLTF("../assets/3d/island.glb");
+  const { nodes, materials } = useGLTF("../assets/3d/island.glb") as GLTFRes;
 
   const lastX = useRef(0);
   const rotationSpeed = useRef(0);
   const dampingFactor = 0.95;
 
-  const handlePointerDown = (event) => {
+  const handlePointerDown = (event: PointerEvent) => {
     event.stopPropagation();
     event.preventDefault();
-    setIsRotating(true);
-
-    const clientX = event.touches ? event.touches[0].clientX : event.clientX;
-
+    setIsRotating && setIsRotating(true);
+  
+    const clientX = (event as unknown as TouchEvent).touches ? (event as unknown as TouchEvent).touches[0].clientX : event.clientX;
+  
     lastX.current = clientX;
   };
 
-  const handlePointerUp = (event) => {
+  const handlePointerUp = (event: PointerEvent) => {
     event.stopPropagation();
     event.preventDefault();
-    setIsRotating(false);
+    setIsRotating && setIsRotating(false);
   };
 
-  const handlePointerMove = (event) => {
+  const handlePointerMove = (event: PointerEvent) => {
+    console.log(event);
     event.stopPropagation();
     event.preventDefault();
     if (isRotating) {
-      const clientX = event.touches ? event.touches[0].clientX : event.clientX;
+      const clientX = (event as unknown as TouchEvent).touches ? (event as unknown as TouchEvent).touches[0].clientX : event.clientX;
 
       const delta = (clientX - lastX.current) / viewport.width;
 
@@ -54,23 +53,24 @@ export function Island({
     }
   };
 
-  const handleKeyDown = (event) => {
+  const handleKeyDown = (event: KeyboardEvent) => {
     if (event.key === "ArrowLeft") {
-      if (!isRotating) setIsRotating(true);
+      if (!isRotating) setIsRotating?.(true);
 
       islandRef.current.rotation.y += 0.005 * Math.PI;
       rotationSpeed.current = 0.007;
-    } else if (event.key === "ArrowRight") {
-      if (!isRotating) setIsRotating(true);
+    } 
+    else if (event.key === "ArrowRight") {
+      if (!isRotating) setIsRotating?.(true);
 
       islandRef.current.rotation.y -= 0.005 * Math.PI;
       rotationSpeed.current = -0.007;
     }
   };
 
-  const handleKeyUp = (event) => {
+  const handleKeyUp = (event: KeyboardEvent) => {
     if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
-      setIsRotating(false);
+      setIsRotating?.(false);
     }
   };
 
@@ -100,7 +100,8 @@ export function Island({
       }
 
       islandRef.current.rotation.y += rotationSpeed.current;
-    } else {
+    } 
+    else {
       const rotation = islandRef.current.rotation.y;
 
       const normalizedRotation =
@@ -108,25 +109,25 @@ export function Island({
 
       switch (true) {
         case normalizedRotation >= 5.45 && normalizedRotation <= 5.85:
-          setCurrentStage(4);
+          setCurrentStage?.(4);
           break;
         case normalizedRotation >= 0.85 && normalizedRotation <= 1.3:
-          setCurrentStage(3);
+          setCurrentStage?.(3);
           break;
         case normalizedRotation >= 2.4 && normalizedRotation <= 2.6:
-          setCurrentStage(2);
+          setCurrentStage?.(2);
           break;
         case normalizedRotation >= 4.25 && normalizedRotation <= 4.75:
-          setCurrentStage(1);
+          setCurrentStage?.(1);
           break;
         default:
-          setCurrentStage(null);
+          setCurrentStage?.(null);
       }
     }
   });
 
   return (
-    <a.group ref={islandRef} {...props}>
+    <a.group ref={islandRef} position={position} rotation={rotation} scale={scale}>
       <mesh
         geometry={nodes.polySurface944_tree_body_0.geometry}
         material={materials.PaletteMaterial001}

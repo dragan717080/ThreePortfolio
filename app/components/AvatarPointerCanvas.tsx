@@ -12,7 +12,7 @@ const Avatar: FC = () => {
   const { actions, names } = useAnimations(avatar.animations, avatar.scene);
 
   useEffect(() => {
-    actions['point'].play();
+    actions!['point']!.play();
   }, []);
 
   return (

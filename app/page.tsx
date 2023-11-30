@@ -6,10 +6,11 @@ import { Canvas } from "@react-three/fiber";
 import { soundoff, soundon } from "@/public/assets/icons";
 import { HomeInfo, Loader, AvatarPointerCanvas } from './components';
 import { Preload } from '@react-three/drei';
+import { Position } from './interfaces';
 
 export default function Home() {
 
-  const [currentStage, setCurrentStage] = useState(1);
+  const [currentStage, setCurrentStage] = useState<number | null>(1);
   const [isRotating, setIsRotating] = useState(false);
   const [isPlayingMusic, setIsPlayingMusic] = useState(false);
 
@@ -20,10 +21,12 @@ export default function Home() {
   const Plane = lazy(() => import('@/public/models/Plane').then(module => ({ default: module.Plane })));
   const Sky = lazy(() => import('@/public/models/Sky').then(module => ({ default: module.Sky })));
 
+  type Position = [number, number, number];
+
   const adjustBiplaneForScreenSize = () => {
     let screenScale, screenPosition;
     if (typeof (window) === 'undefined') {
-      return [null, null];
+      return [[0, 0, 0], [0, 0, 0]];
     }
 
     if (window.innerWidth < 768) {
@@ -40,7 +43,7 @@ export default function Home() {
   const adjustIslandForScreenSize = () => {
     let screenScale, screenPosition;
     if (typeof (window) === 'undefined') {
-      return [null, null];
+      return [[0, 0, 0], [0, 0, 0]];
     }
 
     if (window.innerWidth < 768) {
@@ -74,7 +77,7 @@ export default function Home() {
       <div className='absolute top-28 left-0 right-0 z-10 row'>
         {currentStage && <HomeInfo currentStage={currentStage} />}
       </div>
-      <audio src='/assets/sakura.mp3' ref={audioRef} />
+      <audio src='/assets/ambient-music.mp3' ref={audioRef} />
       <Canvas
         className={`w-full h-screen bg-transparent ${isRotating ? "cursor-grabbing" : "cursor-grab"
           }`}
@@ -101,16 +104,16 @@ export default function Home() {
           isRotating={isRotating}
           setIsRotating={setIsRotating}
           setCurrentStage={setCurrentStage}
-          position={islandPosition}
+          position={islandPosition as Position}
           rotation={[0.1, 4.7077, 0]}
-          scale={islandScale}
+          scale={islandScale as Position}
           currentFocusPoint={{ x: 0, y: 0, z: 0 }}
         />
         <Plane
           isRotating={isRotating}
-          position={biplanePosition}
+          position={biplanePosition as Position}
           rotation={[0, 20.1, 0]}
-          scale={biplaneScale}
+          scale={biplaneScale as Position}
         />
         </Suspense>
         <Preload all />

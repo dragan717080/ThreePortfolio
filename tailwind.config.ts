@@ -19,13 +19,19 @@ module.exports = {
       colors: {
         font: '#030753',
         darkBlue: '#163E6D',
-        blue: '#287EB6',
+        blue: {
+          DEFAULT: '#287EB6',
+          500: "#2b77e7"
+        },
         lightBlue: '#54BBEB',
         lightOrange: '#F27C38',
         darkOrange: '#D94B2B',
         light: '#EEECE8',
         sandGrey: '#CEC8BD',
-        black: '#202124',
+        black: {
+          DEFAULT: "#202124",
+          500: "#1D2235"
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -63,13 +69,6 @@ module.exports = {
         },
         gray: {
           200: "#D5DAE1"
-        },
-        black: {
-          DEFAULT: "#000",
-          500: "#1D2235"
-        },
-        blue: {
-          500: "#2b77e7"
         }
       },
       screens: {
