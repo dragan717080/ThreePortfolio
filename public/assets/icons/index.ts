@@ -18,7 +18,6 @@ import linkedinSvg from './linkedin.svg'
 import twitterSvg from './twitter.svg'
 import bookSvg from './book.svg'
 import estateSvg from './estate.svg'
-import pricewiseSvg from './pricewise.svg'
 import snapgramSvg from './snapgram.svg'
 import threadsSvg from './threads.svg'
 import arrowSvg from './arrow.svg'
@@ -64,7 +63,6 @@ const linkedin = linkedinSvg.src;
 const twitter = twitterSvg.src;
 const book = bookSvg.src;
 const estate = estateSvg.src;
-const pricewise = pricewiseSvg.src;
 const snapgram = snapgramSvg.src;
 const threads = threadsSvg.src;
 const arrow = arrowSvg.src;
@@ -111,7 +109,6 @@ export {
   cart,
   key,
   postgres,
-  pricewise,
   snapgram,
   threads,
   arrow,

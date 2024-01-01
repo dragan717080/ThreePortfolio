@@ -180,7 +180,7 @@ export const projects = [
     iconUrl: nike,
     theme: 'btn-back-red',
     name: 'Next Sanity Nike',
-    description: 'Sports wear app built with Next.js, TypeScript, Tailwind, MongoDB, NextAuth, Prisma, Zustand and Sanity.',
+    description: 'Sports wear app built with Next.js, Three.js, TypeScript, Tailwind, MongoDB, NextAuth, Prisma, Zustand, Frame Motion and Sanity.',
     link: 'https://github.com/dragan717080/NextTypeScriptTailwindPrismaNextAuthSanityNike',
   },
   {
