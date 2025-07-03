@@ -34,7 +34,7 @@ const Projects: FC = () => {
                 />
               </div>
             </div>
-            <div className='mt-5 flex flex-col h-[14vh]'>
+            <div className='mt-5 flex flex-col h-[14vh] min-h-fit'>
               <h4 className='text-2xl font-poppins semibold'>
                 {project.name}
               </h4>

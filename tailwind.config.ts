@@ -18,27 +18,30 @@ module.exports = {
     extend: {
       colors: {
         font: '#030753',
-        darkBlue: '#163E6D',
-        blue: {
-          DEFAULT: '#287EB6',
-          500: "#2b77e7"
-        },
-        lightBlue: '#54BBEB',
-        lightOrange: '#F27C38',
-        darkOrange: '#D94B2B',
-        light: '#EEECE8',
-        sandGrey: '#CEC8BD',
         black: {
           DEFAULT: "#202124",
           500: "#1D2235"
         },
+        blue: {
+          DEFAULT: '#287EB6',
+          500: "#2B77E7"
+        },
+        darkBlue: '#163E6D',
+        gray: {
+          200: "#D5DAE1"
+        },
+        light: '#EEECE8',
+        lightBlue: '#54BBEB',
+        lightOrange: '#F27C38',
+        darkOrange: '#D94B2B',
+        sandGrey: '#CEC8BD',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         theme: "#32f6f7",
-				themeSecondary: "#fa02fc",
+        themeSecondary: "#fa02fc",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -67,17 +70,22 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        gray: {
-          200: "#D5DAE1"
-        }
       },
-      screens: {
-        xs: '500px'
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      boxShadow: {
+        card: '0px 1px 2px 0px rgba(0, 0, 0, 0.05)'
+      },
+      fontFamily: {
+        worksans: ["Work Sans", "sans-serif"],
+        poppins: ['Poppins', "sans-serif"]
       },
       keyframes: {
         "accordion-down": {
@@ -89,16 +97,11 @@ module.exports = {
           to: { height: 0 },
         },
       },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+      screens: {
+        xs: '500px'
       },
-      fontFamily: {
-        worksans: ["Work Sans", "sans-serif"],
-        poppins: ['Poppins', "sans-serif"]
-      },
-      boxShadow: {
-        card: '0px 1px 2px 0px rgba(0, 0, 0, 0.05)'
+      spacing: {
+        22: '5.5rem'
       }
     },
   },

@@ -1,4 +1,4 @@
-import { bc, alertbird } from "@/public/assets/images";
+import { alertbird, bc, bonnygames } from "@/public/assets/images";
 import {
   book,
   cart,
@@ -146,7 +146,25 @@ export const skills = [
   }
 ];
 
+// OTHER POSSIBLE COLORS
+// 1. Light Beige / Tan: #F5D0A9
+// 2. Soft Mint Green: #B4F8C8
+// 3. Light Peach: #FFBCB3
+// 4. Soft Coral: #F4A8A1
+
+
 export const experiences = [
+  {
+    title: "Frontend Developer",
+    company_name: "Bonny Games",
+    icon: bonnygames,
+    iconBg: "#E1C6FF",
+    date: "June 2021 - November 2022",
+    points: [
+      "Built and maintained frontend systems using React.",
+      "Ensured cross-browser compatibility and adherence to modern web standards.",
+    ],
+  },
   {
     title: "Full Stack Developer",
     company_name: "Better Collective",
@@ -164,13 +182,13 @@ export const experiences = [
     title: "Frontend Developer",
     company_name: "AlertBird",
     icon: alertbird,
-    iconBg: "#a2d2ff",
-    date: "May 2023 - Present",
+    iconBg: "#A2D2FF",
+    date: "May 2023 - March 2025",
     points: [
-      "Developing and maintaining web applications using Nuxt, Sanity and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developings and maintaining web applications using Nuxt.js, Sanity and other related technologies.",
+      "Working in an automated CI/CD and containerized environment on Azure DevOps and Google Cloud.",
+      "Implementing responsive design and ensuring cross-browser compatibility and adherence to modern web standards.",
+      "Contributed to improving team workflows through code reviews and knowledge sharing.",
     ],
   },
 ];

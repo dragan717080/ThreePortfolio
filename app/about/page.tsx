@@ -5,7 +5,6 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import { experiences, skills } from "@/app/constants";
-
 import "react-vertical-timeline-component/style.min.css";
 import { AvatarPointerCanvas } from "../components";
 
@@ -22,7 +21,7 @@ const About = () => {
       </h1>
       <div className='mt-5 flex flex-col gap-3 text-slate-500'>
         <p>
-          Software Engineer based in Serbia, specializing in building
+          Software Engineer based in Serbia, specialized in building
           modern and highly optimized full stack applications.
         </p>
       </div>
@@ -107,11 +106,11 @@ const About = () => {
         <h3 className='subhead-text'>Languages</h3>
         <div className='mt-5 flex flex-col gap-3 text-slate-500'>
           <p>
-            When it comes to coding I&apos;m self taught, but I have strong background
-            in linguistics so I am quite fast with learning new languages. Here&apos;s what I&apos;ve learned so far:
+            I have a formal background in linguistics, enabling a fast and effective approach
+            to mastering both human and programming languages.
           </p>
           <ul className='my-5 list-disc ml-5 space-y-2'>
-            {['English', 'Spanish', 'Italian', 'Russian', 'Ukrainian'].map((point, index) => (
+            {['English', 'Spanish', 'Italian', 'Russian', 'Ukrainian', 'German'].map((point, index) => (
               <li
                 key={index}
                 className='text-slate-500 font-normal pl-1 text-sm'

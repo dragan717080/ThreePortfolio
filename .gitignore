@@ -31,6 +31,8 @@ yarn-error.log*
 # vercel
 .vercel
 
+public/assets/start-over.mp3
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

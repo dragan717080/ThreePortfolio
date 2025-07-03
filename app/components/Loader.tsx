@@ -4,9 +4,15 @@ import { Html } from "@react-three/drei";
 
 const Loader = () => {
   return (
-    <Html>
-      <div className='row'>
-        <div className='w-20 h-20 border-2 border-opacity-20 border-blue-500 border-t-blue-500 rounded-full animate-spin'></div>
+    <Html className="absolute inset-0 row z-50">
+      <div className="row flex-col gap-12 md:gap-[4.25rem] 2xl:gap-20 !min-w-[15rem]">
+        {/* Spinner */}
+        <div className="row-h">
+          <div className="lds-spinner translate-x-[-2rem] scale-[0.5] md:scale-[0.75] 2xl:scale-[0.9]"><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /><div /></div>
+        </div>
+
+        {/* Text */}
+        <span className="text-md sm:text-lg md:text-xl lg:text-2xl 2xl:text-3xl text-[#1F1F1F]">Still loading...</span>
       </div>
     </Html>
   );
