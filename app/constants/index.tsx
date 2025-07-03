@@ -1,6 +1,7 @@
 import { alertbird, bc, bonnygames } from "@/public/assets/images";
 import {
   book,
+  calculator,
   cart,
   contact,
   css,
@@ -215,12 +216,19 @@ export const projects = [
     description: 'Book app built in Laravel, Vue, Nuxt, Tailwind and MySQL.',
     link: 'https://github.com/dragan717080/LaravelVueNuxtTailwindMySQLBooksApp',
   },
+  /*   {
+      iconUrl: cart,
+      theme: 'btn-back-pink',
+      name: 'Groceries App',
+      description: 'Groceries app built in Next.js, TypeScript, Tailwind and NextAuth.',
+      link: 'https://github.com/dragan717080/Groceries',
+    }, */
   {
-    iconUrl: cart,
+    iconUrl: calculator,
     theme: 'btn-back-pink',
-    name: 'Groceries App',
-    description: 'Groceries app built in Next.js, TypeScript, Tailwind and NextAuth.',
-    link: 'https://github.com/dragan717080/Groceries',
+    name: 'Matrix Calculator',
+    description: 'Matrix Calculator app built with React, TypeScript, Tailwind, Headless UI and Vite.',
+    link: 'https://github.com/dragan717080/MatrixCalculator',
   },
   {
     iconUrl: estate,

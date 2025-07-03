@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import Flag from 'react-world-flags';
 
 const HomeInfo = ({ currentStage }: { currentStage: number }) => {
   if (currentStage === 1) {
@@ -9,7 +10,7 @@ const HomeInfo = ({ currentStage }: { currentStage: number }) => {
         <span className='font-semibold mx-2 text-white'>Dragan</span>
         👋
         <br />
-        A Full Stack Web Developer from Serbia 🇷🇸
+        <span className='row-v gap-2.5'>A Full Stack Web Developer from Serbia <Flag code="RS" style={{ width: '1.75rem', height: 'auto' }} /></span>
       </h1>
     );
   }

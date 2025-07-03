@@ -1,4 +1,5 @@
 import cssSvg from './css.svg'
+import calculatorSvg from './calculator.svg'
 import expressSvg from './express.svg'
 import gitSvg from './git.svg'
 import githubSvg from './github.svg'
@@ -41,6 +42,7 @@ import cartSvg from './cart.svg'
 import soundon from './soundon.png'
 import soundoff from './soundoff.png'
 
+const calculator = calculatorSvg.src;
 const css = cssSvg.src;
 const express = expressSvg.src;
 const docker = dockerSvg.src;
@@ -83,6 +85,7 @@ const graphql = graphqlSvg.src;
 const postgres = postgresSvg.src;
 
 export {
+  calculator,
   css,
   express,
   git,

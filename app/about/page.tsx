@@ -134,7 +134,7 @@ const About = () => {
       </div>
       <hr className='border-slate-200' />
       <h1>
-        You can contact me at <span className="blue-gradient_text">dburic717@outlook.com</span>
+        You can contact me at <a href="mailto:dburic717@outlook.com?subject=Hello%20Dragan&body=Hello%20Dragan!"><span className="blue-gradient_text">dburic717@outlook.com</span></a>
       </h1>
     </section>
   );
