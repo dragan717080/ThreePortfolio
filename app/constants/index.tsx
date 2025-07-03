@@ -173,10 +173,10 @@ export const experiences = [
     iconBg: "#DCDCDC",
     date: "November 2022 - May 2023",
     points: [
-      "Developing and maintaining web applications using Symfony, Postgres, React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developed and maintained web applications using Symfony, Postgres, React.js and other related technologies.",
+      "Collaborated with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Implemented responsive design and ensured cross-browser compatibility.",
+      "Participated in code reviews and provided constructive feedback to other developers.",
     ],
   },
   {
@@ -186,9 +186,9 @@ export const experiences = [
     iconBg: "#A2D2FF",
     date: "May 2023 - March 2025",
     points: [
-      "Developings and maintaining web applications using Nuxt.js, Sanity and other related technologies.",
-      "Working in an automated CI/CD and containerized environment on Azure DevOps and Google Cloud.",
-      "Implementing responsive design and ensuring cross-browser compatibility and adherence to modern web standards.",
+      "Developed and maintained web applications using Nuxt.js, Sanity and other related technologies.",
+      "Worked in an automated CI/CD and containerized environment on Azure DevOps and Google Cloud.",
+      "Implemented responsive design and ensured cross-browser compatibility and adherence to modern web standards.",
       "Contributed to improving team workflows through code reviews and knowledge sharing.",
     ],
   },
